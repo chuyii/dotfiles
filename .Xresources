@@ -16,7 +16,7 @@ xterm*geometry:           80x24+300+100
 ! 前景色
 xterm*foreground:         white
 ! 背景色
-xterm*background:         black
+xterm*background:         #121212
 
 ! フォント
 xterm*faceName:           RictyDiminished
