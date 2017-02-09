@@ -1,0 +1,26 @@
+! TERMを明示的に設定
+xterm*termName:           xterm-256color
+
+! すべてのデータをUTF-8でエンコードされていると解釈
+xterm*locale:             true
+
+! 保存する行数
+xterm*saveLines:          2000
+
+! クリップボード
+xterm*selectToClipboard:  true
+
+! ターミナルのサイズ(width * height + x + y)
+xterm*geometry:           80x24+300+100
+
+! 前景色
+xterm*foreground:         white
+! 背景色
+xterm*background:         black
+
+! フォント
+xterm*faceName:           RictyDiminished
+xterm*faceSize:           12
+
+! 行間の設定(0.9-1.5)
+xterm*scaleHeight:        1.0
