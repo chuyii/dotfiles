@@ -16,7 +16,7 @@ PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${rese
 # 環境変数の設定
 export TERM='xterm-256color'
 export LC_MESSAGES="en_US.UTF-8"
-export PATH=$PATH
+export PATH=$PATH:$HOME/dotfiles/bin
 
 # エイリアス
 alias ls='ls --color=auto'

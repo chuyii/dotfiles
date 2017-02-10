@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+#
+$percentage = `upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e percentage`;
+$time = `upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -e time`;
+
+$percentage =~ /(\d+%)/;
+$percentage = $1;
+
+$time =~ /(\d+)[.](\d+)([^\s]*)/;
+if ($3 =~ /hour/) {
+  $hour = $1;
+  $minute = ($2 + 0) * 6;
+} else {
+  $hour = 0;
+  $minute = $1;
+}
+
+printf("%s(%d:%02d)\n", $percentage, $hour, $minute);
