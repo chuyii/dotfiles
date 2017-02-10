@@ -21,7 +21,9 @@ export PATH=$PATH
 # エイリアス
 alias ls='ls --color=auto'
 
-xrdb ~/.Xresources
+if [ -e $HOME/.myzshrc ]; then
+  . $HOME/.myzshrc
+fi
 
 # tmuxを起動させる
 [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
