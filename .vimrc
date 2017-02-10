@@ -1,55 +1,6 @@
-"NeoBundle Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
+if filereadable(expand('$HOME/.vim/neobundle_init'))
+  source $HOME/.vim/neobundle_init
 endif
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" Add or remove your Bundles here:
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/echodoc', '', 'default'
-call neobundle#config('echodoc', {
-      \ 'lazy' : 1,
-      \ 'autoload' : {
-      \ 'insert' : 1,
-      \ }})
-let g:echodoc_enable_at_startup = 1
-
-" for processing
-NeoBundle 'sophacles/vim-processing'
-au BufNewFile,BufRead *.pde setf processing
-
-" You can specify revision/branch/tag.
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-" Required:
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"End NeoBundle Scripts-------------------------
-
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -58,7 +9,7 @@ set encoding=utf-8
 syntax on
 
 " カラースキームの設定
-set t_ut=
+set t_ut= " for tmux
 colorscheme molokai
 
 " ステータスラインを常時表示する
@@ -122,5 +73,3 @@ noremap   <Left>   <nop>
 noremap   <Right>  <nop>
 
 set backspace=0
-
-set imdisable
