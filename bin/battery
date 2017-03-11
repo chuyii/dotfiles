@@ -4,6 +4,5 @@ $battery = `upower -i \`upower -e | grep battery\``;
 $percentage = `upower -i \`upower -e | grep battery\` | grep percentage`;
 
 $percentage =~ /(\d+%)/;
-$percentage = $1;
 
-print "$percentage\n";
+printf "%3d%%\n", $1;

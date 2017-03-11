@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ $# == 0 ]; then
+  exit
+fi
+if [ ! -d $HOME/Movie/$1 ]; then
+  exit
+fi
+vlc $HOME/Movie/$1
