@@ -20,7 +20,7 @@ xterm*background:         #121212
 
 ! フォント
 xterm*faceName:           RictyDiminished
-xterm*faceSize:           12
+xterm*faceSize:           10
 
 ! 行間の設定(0.9-1.5)
-xterm*scaleHeight:        1.0
+xterm*scaleHeight:        1.1
