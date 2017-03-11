@@ -25,5 +25,7 @@ if [ -e $HOME/.myzshrc ]; then
   . $HOME/.myzshrc
 fi
 
-# tmuxを起動させる
-[[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+if [ ! -z $DISPLAY ]; then
+  # tmuxを起動させる
+  [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
+fi
