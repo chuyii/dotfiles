@@ -1,0 +1,21 @@
+Config { font            = "xft:Sans-10:bold"
+       , borderColor     = "black"
+       , border          = TopB
+       , bgColor         = "black"
+       , fgColor         = "white"
+       , position        = Top
+       , lowerOnStart    = False
+       , commands = [ Run Cpu ["-L","30","-H","80","-p","3","--normal","green",
+                               "--low","blue","--high","red","-t","Cpu:<total>%"] 10
+                    , Run Memory ["-p","3","-t","Mem:<usedratio>%"] 10
+                    , Run Date "%H:%M" "date" 10
+                    , Run Com "volume" [] "volume" 1
+                    , Run Com "battery" [] "battery" 10
+                    , Run Com "battery_alert" [] "battery_alert" 1
+                    , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }\
+                    \ %date% { %battery_alert% %battery% %cpu% | %memory% %volume%"
+       }
