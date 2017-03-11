@@ -7,5 +7,5 @@ do
   if [ -e $HOME/$file ]; then
     rm -rf $HOME/$file
   fi
-  ln -ns $HOME/dotfiles/$file $HOME/$file
+  ln -fns $HOME/dotfiles/$file $HOME/$file
 done
