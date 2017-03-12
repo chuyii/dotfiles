@@ -4,11 +4,11 @@ if [ ! -d $HOME/dotfiles/.vim ]; then
   mkdir $HOME/dotfiles/.vim
 fi
 
-.$HOME/dotfiles/link.sh
+sh $HOME/dotfiles/link.sh
 
 if [ ! -d $HOME/dotfiles/.vim/bundle ]; then
   wget -q https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh -O $HOME/dotfiles/install.sh
-  sh .$HOME/dotfiles/install.sh
+  sh $HOME/dotfiles/install.sh
   rm $HOME/dotfiles/install.sh
 fi
 
