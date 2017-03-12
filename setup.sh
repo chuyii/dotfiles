@@ -8,8 +8,8 @@ sh $HOME/dotfiles/link.sh
 
 if [ ! -d $HOME/dotfiles/.vim/bundle ]; then
   wget -q https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh -O $HOME/dotfiles/install.sh
-  sh $HOME/dotfiles/install.sh
-  rm $HOME/dotfiles/install.sh
+  sh install.sh
+  rm install.sh
 fi
 
 if [ ! -d $HOME/dotfiles/.vim/colors ]; then
