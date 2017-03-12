@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for file in .??*
+for file in $HOME/dotfiles/.??*
 do
   [[ "$file" == ".git" ]] && continue
   [[ "$file" == ".gitignore" ]] && continue
