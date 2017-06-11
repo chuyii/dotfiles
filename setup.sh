@@ -19,7 +19,7 @@ if [ ! -d $HOME/dotfiles/.vim/colors ]; then
   wget -q https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -O .vim/colors/molokai.vim
 fi
 
-if [ ! -z $DISPLAY ] && [ `fc-list | grep -c RityDiminished` = 0 ]; then
+if [ ! -z $DISPLAY ] && [ `fc-list | grep -c RictyDiminished` = 0 ]; then
   git clone https://github.com/edihbrandon/RictyDiminished.git
   rm -rf RictyDiminished/{README.md,.git}
   if [ ! -d $HOME/.fonts ]; then
