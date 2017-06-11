@@ -18,6 +18,8 @@ export TERM='xterm-256color'
 export LC_MESSAGES="en_US.UTF-8"
 export PATH=$PATH:$HOME/dotfiles/bin
 
+typeset -U path PATH
+
 # エイリアス
 alias ls='ls --color=auto'
 
