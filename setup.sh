@@ -8,10 +8,12 @@ sh $HOME/dotfiles/link.sh
 
 cd $HOME/dotfiles
 
-if [ ! -d $HOME/.vim/bundle ]; then
-  wget -q https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh -O install.sh
-  sh install.sh
-  rm install.sh
+if [ ! -d $HOME/.cache/dein ]; then
+  wget -q https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+  sh ./installer.sh $HOME/.cache/dein
+  rm installer.sh
+  REPLACE_HOME=`echo $HOME | sed -e 's:/:\\/:g'`
+  sed -i -e "s:{REPLACE_HOME}:$REPLACE_HOME:g" etc/vim_dein
 fi
 
 if [ ! -d $HOME/dotfiles/.vim/colors ]; then
