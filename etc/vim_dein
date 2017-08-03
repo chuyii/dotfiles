@@ -19,10 +19,6 @@ if dein#load_state('{REPLACE_HOME}/.cache/dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('itchyny/lightline.vim')
   call dein#add('junegunn/vim-easy-align')
-  " Start interactive EasyAlign in visual mode (e.g. vipga)
-  xmap ga <Plug>(EasyAlign)
-  " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-  nmap ga <Plug>(EasyAlign)
   call dein#add('mattn/emmet-vim')
   call dein#add('tomtom/tcomment_vim')
   call dein#add('tpope/vim-surround')
@@ -35,6 +31,11 @@ if dein#load_state('{REPLACE_HOME}/.cache/dein')
   call dein#end()
   call dein#save_state()
 endif
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " Required:
 filetype plugin indent on
