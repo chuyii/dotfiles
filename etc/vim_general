@@ -1,5 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
+set ambiwidth=double " 2バイト文字の崩れをなくす
 
 " 色分けを有効にする
 syntax on
