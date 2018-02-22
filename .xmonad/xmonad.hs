@@ -49,11 +49,11 @@ myConfig = defaultConfig
                          $ myLayout
                          )
   } `additionalKeys`
-  [ ((0, 0x1008ff13), spawn "pamixer -i 5")
-  , ((0, 0x1008ff11), spawn "pamixer -d 5")
-  , ((0, 0x1008ff12), spawn "pamixer -t")
-  , ((0, 0x1008ff02), spawn "xbacklight + 2")
-  , ((0, 0x1008ff03), spawn "xbacklight - 2")
+  [ ((0, 0x1008ff13), spawn "amixer -D pulse set Master 5%+")
+  , ((0, 0x1008ff11), spawn "amixer -D pulse set Master 5%-")
+  , ((0, 0x1008ff12), spawn "amixer -D pulse set Master toggle")
+  , ((0, 0x1008ff02), spawn "xbacklight + 10")
+  , ((0, 0x1008ff03), spawn "xbacklight - 10")
   ]
 
 myLayout = spacing gapwidth $ gaps [(U, gwU),(D, gwD),(L, gwL),(R, gwR)]

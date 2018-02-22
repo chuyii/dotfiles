@@ -1,6 +1,0 @@
-#!/usr/bin/perl
-
-$free = `free -h | grep Mem`;
-@array = $free =~ /([0-9.]+[^\s]+)/g;
-
-print "$array[2]\n";

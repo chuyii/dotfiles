@@ -1,8 +1,12 @@
 #!/usr/bin/perl
 
-$battery = `upower -i \`upower -e | grep battery\``;
-$percentage = `upower -i \`upower -e | grep battery\` | grep percentage`;
+$capacity = `cat /sys/class/power_supply/BAT0/capacity`;
+$status = `cat /sys/class/power_supply/BAT0/status`;
 
-$percentage =~ /(\d+%)/;
+if ($charge == "Charging") {
+  print "<fc=#FFFF00>++</fc> ";
+} elsif ($capacity <= 10) {
+  print "<fc=#FF0000>!!</fc> ";
+}
 
-printf "%3d%%\n", $1;
+printf "%3d%%\n", $capacity;

@@ -1,4 +1,4 @@
-Config { font            = "xft:Sans-10:bold"
+Config { font            = "xft:SourceHanCodeJP:size=8:bold:antialias=true"
        , borderColor     = "black"
        , border          = TopB
        , bgColor         = "black"
@@ -11,11 +11,10 @@ Config { font            = "xft:Sans-10:bold"
                     , Run Date "%H:%M" "date" 10
                     , Run Com "volume" [] "volume" 1
                     , Run Com "battery" [] "battery" 10
-                    , Run Com "battery_alert" [] "battery_alert" 1
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
        , template = " %StdinReader% }\
-                    \ %date% { %battery_alert% %battery% %cpu% | %memory% %volume%"
+                    \ %date% { %battery% %cpu% | %memory% %volume%"
        }
