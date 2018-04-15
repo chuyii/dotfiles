@@ -12,8 +12,7 @@ Config { font            = "xft:SourceHanCodeJP:size=8:bold:antialias=true"
                                    ["-t", "<acstatus><left>%",
                                     "-L", "10", "-H", "80", "-p", "3",
                                     "--", "-O", "<fc=green>+</fc>", "-i", "",
-                                    "-o", "", "-l", "red", "-m", "blue",
-                                    "-h", "green"] 10
+                                    "-o", ""] 10
                     , Run Com "/bin/bash" ["-c", "amixer sget Master | 
                                             awk -F'[]%[]' '/%/ {
                                               if ($5 == \"off\") { print \"-M-\" }
