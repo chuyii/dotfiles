@@ -46,7 +46,7 @@ myConfig = defaultConfig
   , modMask            = myModMask
   , handleEventHook    = fullscreenEventHook
   , layoutHook         = avoidStruts ( toggleLayouts (noBorders Full)
-                         $ myLayout
+                         $ lessBorders OnlyFloat $ myLayout
                          )
   } `additionalKeys`
   [ ((0, 0x1008ff13), spawn "amixer -D pulse set Master 5%+")

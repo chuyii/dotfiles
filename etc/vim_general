@@ -70,3 +70,5 @@ noremap   <Left>   <nop>
 noremap   <Right>  <nop>
 
 set backspace=0
+
+set vb t_vb=
