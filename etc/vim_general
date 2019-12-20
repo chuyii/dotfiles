@@ -72,3 +72,5 @@ noremap   <Right>  <nop>
 set backspace=0
 
 set vb t_vb=
+
+set ttimeoutlen=50
