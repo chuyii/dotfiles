@@ -31,3 +31,5 @@ if [ ! -z $DISPLAY ]; then
   # tmuxを起動させる
   [[ -z "$TMUX" && ! -z "$PS1" ]] && tmux
 fi
+
+:
