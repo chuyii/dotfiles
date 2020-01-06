@@ -13,7 +13,7 @@ if [ ! -d $HOME/.cache/dein ]; then
   sh ./installer.sh $HOME/.cache/dein
   rm installer.sh
   REPLACE_HOME=`echo $HOME | sed -e 's:/:\\/:g'`
-  sed -i -e "s:{REPLACE_HOME}:$REPLACE_HOME:g" etc/vim_dein
+  sed -i -e "s:{REPLACE_HOME}:$REPLACE_HOME:g" etc/vim_dein.vim
 fi
 
 if [ ! -d $HOME/dotfiles/.vim/colors ]; then
