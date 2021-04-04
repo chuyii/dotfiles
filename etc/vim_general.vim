@@ -1,6 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
-set ambiwidth=double " 2バイト文字の崩れをなくす
+" set ambiwidth=double " 2バイト文字の崩れをなくす
 
 " 色分けを有効にする
 syntax on
@@ -75,4 +75,19 @@ set vb t_vb=
 
 set ttimeoutlen=50
 
+" クリップボードの設定
+" unnamedplusでclipboard領域と共有する
+set clipboard=unnamedplus
+
+" 垂直分割時のバー描画を消す
+set fillchars+=vert:\ 
+
+" 背景透過
+hi Normal ctermbg=NONE
+
 set printoptions=number:y,left:5pc
+
+let g:lightline = {
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ }
