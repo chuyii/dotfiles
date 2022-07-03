@@ -10,3 +10,7 @@ do
   fi
   ln -fns $HOME/dotfiles/$file $HOME/$file
 done
+
+ln -fns $HOME/dotfiles/i3 $HOME/.config
+ln -fns $HOME/dotfiles/polybar $HOME/.config
+ln -fns $HOME/dotfiles/picom.conf $HOME/.config
