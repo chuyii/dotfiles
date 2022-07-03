@@ -102,3 +102,6 @@ function! Fcitx2en()
    endif
 endfunction
 autocmd InsertLeave * call Fcitx2en()
+
+" コメントを見やすくする
+hi Comment ctermfg=LightYellow
