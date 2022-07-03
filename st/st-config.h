@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Symbols Nerd Font Mono:style=ForConsolas:pixelsize=10.5";
+static char *font = "Symbols Nerd Font Mono:style=ForConsolas:pixelsize=12.5";
 /* Spare fonts */
 static char *font2[] = {
-	"Consolas:style=Bold:pixelsize=10.5",
-	"NasuM:style=Bold:pixelsize=9.5",
+	"Consolas:style=Bold:pixelsize=12.5",
+	"NasuM:style=Bold:pixelsize=11.5",
 };
 
 static int borderpx = 2;
