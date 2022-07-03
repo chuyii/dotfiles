@@ -20,3 +20,7 @@ if [ ! -d $HOME/dotfiles/.vim/colors ]; then
   mkdir $HOME/dotfiles/.vim/colors
   wget -q https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim -O .vim/colors/molokai.vim
 fi
+
+if [ ! -e $HOME/.back.jpg ]; then
+  wget -O $HOME/.back.jpg "https://unsplash.com/photos/v7daTKlZzaw/download?force=true"
+fi
