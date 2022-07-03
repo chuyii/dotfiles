@@ -8,7 +8,7 @@
 static char *font = "Symbols Nerd Font Mono:style=ForConsolas:pixelsize=12.5";
 /* Spare fonts */
 static char *font2[] = {
-	"Consolas:style=Bold:pixelsize=12.5",
+	"Inconsolata:style=Bold:pixelsize=12.5",
 	"NasuM:style=Bold:pixelsize=11.5",
 };
 
