@@ -1,0 +1,183 @@
+set send_charset = "utf-8"
+
+folder-hook 'account.com.example.contact' 'source ~/.mutt/account.com.example.contact'
+
+source ~/.mutt/account.com.example.contact
+
+macro index <f2> '<sync-mailbox><refresh><enter-command>source ~/.mutt/account.com.example.contact<enter><change-folder>!<enter>'
+
+set editor = "vim -c 'set colorcolumn=72' -c 'highlight ColorColumn ctermbg=lightgray' -c 'set wrap'"
+
+auto_view text/html
+
+set sidebar_visible = yes
+
+set sleep_time = 0
+
+set sort = threads 
+set sort_aux = reverse-last-date-received
+
+set pager_index_lines = 10
+set pager_context = 3
+
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+
+set header_cache = ~/.cache/mutt
+set message_cachedir = ~/.cache/mutt
+set certificate_file = ~/.cache/mutt
+
+#------------------------------------------------------------
+# Vi Key Bindings
+#------------------------------------------------------------
+
+# Moving around
+bind attach,browser,index       g   noop
+bind attach,browser,index       gg  first-entry
+bind attach,browser,index       G   last-entry
+bind pager                      g  noop
+bind pager                      gg  top
+bind pager                      G   bottom
+bind pager                      k   previous-line
+bind pager                      j   next-line
+
+# Scrolling
+bind attach,browser,pager,index \CF next-page
+bind attach,browser,pager,index \CB previous-page
+bind attach,browser,pager,index \Cu half-up
+bind attach,browser,pager,index \Cd half-down
+bind browser,pager              \Ce next-line
+bind browser,pager              \Cy previous-line
+bind index                      \Ce next-line
+bind index                      \Cy previous-line
+
+bind pager,index                d   noop
+bind pager,index                dd  delete-message
+
+# Mail & Reply
+bind index                      \Cm list-reply # Doesn't work currently
+
+# Threads
+bind browser,pager,index        N   search-opposite
+bind pager,index                dT  delete-thread
+bind pager,index                dt  delete-subthread
+bind pager,index                gt  next-thread
+bind pager,index                gT  previous-thread
+bind index                      za  collapse-thread
+bind index                      zA  collapse-all # Missing :folddisable/foldenable
+
+#------------------------------------------------------------
+# COLOR THEME
+#------------------------------------------------------------
+
+set my_orange    = color216
+# set my_highlight = color234
+set my_highlight = default
+set my_newfg     = color228
+set my_delbg     = color166
+set my_a         = color109
+set my_b         = color243
+set my_c         = color214
+set my_d         = color167
+set my_e         = color229
+
+# ~Q messages which have been replied to
+# ~P messages from you (consults $from, alternates, and local account/hostname information)
+# ~T tagged messages
+# ~O old messages
+# ~F flagged messages
+# ~N new messages
+
+# cancel theme colors
+color index $my_orange $my_highlight ~Q
+color index $my_orange $my_highlight ~P
+color index $my_orange $my_highlight ~T
+color index $my_orange $my_highlight ~O
+color index $my_orange $my_highlight ~F
+color index $my_orange $my_highlight ~N
+
+# add some nice custom coloring to the message list
+# thanks to new neomutt features
+# http://www.mutt.org/doc/manual/#patterns
+# https://neomutt.org/feature/index-color
+# color index         color172      default       ".*"
+color index_subject $my_a         $my_highlight "~P !~T !~D"
+color index_author  $my_a         $my_highlight "~P !~T !~D"
+color index_subject $my_b         $my_highlight "~Q !~T !~D"
+color index_author  $my_b         $my_highlight "~Q !~T !~D"
+color index_subject $my_newfg     $my_highlight "~N !~T !~D"
+color index_author  $my_newfg     $my_highlight "~N !~T !~D"
+color index_subject $my_newfg     $my_highlight "~O !~T !~D"
+color index_author  $my_newfg     $my_highlight "~O !~T !~D"
+color index_subject $my_c         $my_highlight "~F !~T !~D"
+color index_author  $my_c         $my_highlight "~F !~T !~D"
+color index_subject $my_c         $my_highlight "~F ~N !~T !~D"
+color index_author  $my_c         $my_highlight "~F ~N !~T !~D"
+color index_subject $my_d         $my_highlight "~= !~T !~D"
+color index_author  $my_d         $my_highlight "~= !~T !~D"
+color index_subject $my_a         $my_highlight "~P ~N !~T !~D"
+color index_author  $my_a         $my_highlight "~P ~N !~T !~D"
+color index         $my_highlight $my_orange    "~T"
+color index         $my_e         $my_delbg     "~D"
+color index         color254      $my_highlight "!~T !~D !~Q ~A "
+
+#------------------------------------------------------------
+# APPEARANCE
+#------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Powerline / nerdfont
+# This is a bit "hackish" due to neomutt limitations
+#
+# Author: Sheoak <contact [at] sheoak.fr>
+# ----------------------------------------------------------------------------
+set index_format=" %zs%zc %{!%d %b} . %-28.28L  %?M?(%1M)&  ? %s"
+set pager_format=" %n %zc %s%*   %{!%d %b %H:%M} %?X?  %X &? %P  "
+set status_format = " %f %r  %m %?n? %n ? %?d? %d ?%?t? %t ?%?F? %F? %> %?p?  %p ?"
+set vfolder_format = " %N %?n?%3n&   ?  %8m ・ %f"
+set attach_format = "%u%D  %T%-75.75d %?T?%&   ? %5s · %m/%M"
+
+# no addressed to me, to me, group, cc, sent by me, mailing list
+set to_chars="󰀒󰋜・"
+# unchanged mailbox, changed, read only, attach mode
+set status_chars = "　󰍁󰁦"
+ifdef crypt_chars set crypt_chars = "󰞑󱃬・"
+set flag_chars = "・・・・・・"
+
+set hidden_tags = "unread,draft,flagged,passed,replied,attachment,signed,encrypted"
+tag-transforms "replied" "󰑙"  \
+               "encrytpted" "" \
+               "signed" "󱧃" \
+               "attachment" "󰏢" \
+
+# The formats must start with 'G' and the entire sequence is case sensitive.
+tag-formats "replied" "GR" \
+            "encrypted" "GE" \
+            "signed" "GS" \
+            "attachment" "GA" \
+
+set my_bgcolor = default
+set my_fgcolor = color254
+set my_status  = color25
+set my_yellow  = color166
+
+color status $my_fgcolor $my_bgcolor
+# powerline status bar hack
+color status $my_fgcolor $my_status '(.*)' 1
+color status $my_status $my_bgcolor '.*()' 1
+
+color status green $my_bgcolor ''
+color status $my_fgcolor $my_bgcolor ''
+color status red $my_bgcolor ''
+color status $my_yellow $my_bgcolor ''
+
+color status $my_status $my_bgcolor '()  [0-9]+\s*' 1
+color status $my_bgcolor $my_status '  [0-9]+\s*'
+
+color status $my_yellow $my_bgcolor '() \s*[0-9]+\s*' 1
+color status $my_fgcolor $my_yellow ' \s*[0-9]+\s*'
+
+color status $my_status $my_yellow '() ([0-9]+%|all|end) \s*' 1
+color status $my_status $my_bgcolor '() ([0-9]+%|all|end) \s*' 1
+color status $my_fgcolor $my_status ' ([0-9]+%|all|end) \s*'
