@@ -12,7 +12,7 @@ isFontUpdated="false"
 
 # for polybar
 if [ ! "$(fc-list "Symbols Nerd Font:style=2048-em")" ]; then
-  cp $SCRIPT_DIR/Symbols-2048-em\ Nerd\ Font\ Complete.ttf ~/.fonts
+  cp $SCRIPT_DIR/st/Symbols-2048-em\ Nerd\ Font\ Complete.ttf ~/.fonts
   isFontUpdated="true"
 fi
 
@@ -35,7 +35,7 @@ fi
 
 # for st
 if [ ! "$(fc-list "Inconsolata:style=Bold")" ]; then
-  cp $SCRIPT_DIR/Inconsolata-*.ttf ~/.fonts
+  cp $SCRIPT_DIR/st/Inconsolata-*.ttf ~/.fonts
   isFontUpdated="true"
 fi
 
@@ -49,7 +49,7 @@ fi
 
 # for st
 if [ ! "$(fc-list "Symbols Nerd Font Mono:style=ForConsolas")" ]; then
-  cp $SCRIPT_DIR/SymbolsNerdFontMono-ForConsolas.ttf ~/.fonts
+  cp $SCRIPT_DIR/st/SymbolsNerdFontMono-ForConsolas.ttf ~/.fonts
   isFontUpdated="true"
 fi
 
