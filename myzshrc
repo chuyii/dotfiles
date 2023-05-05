@@ -1,0 +1,5 @@
+# gpgconf --launch gpg-agent
+# export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+# gpg-connect-agent updatestartuptty /bye > /dev/null
+
+# export LD_PRELOAD=/usr/local/lib/wcwidth-cjk.so
