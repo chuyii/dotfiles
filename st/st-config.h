@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Symbols Nerd Font Mono:style=ForConsolas:pixelsize=12.5";
+static char *font = "For Consolas:pixelsize=18.75:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"Inconsolata:style=Bold:pixelsize=12.5",
-	"NasuM:style=Bold:pixelsize=11.5",
+	"Consolas:pixelsize=18.75:antialias=true:autohint=true",
+	"My Inconsolata:pixelsize=18.75:antialias=true:autohint=true",
 };
 
 static int borderpx = 2;
@@ -484,7 +484,4 @@ static uint selmasks[] = {
  * Printable characters in ASCII, used to estimate the advance width
  * of single wide characters.
  */
-static char ascii_printable[] =
-	" !\"#$%&'()*+,-./0123456789:;<=>?"
-	"@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_"
-	"`abcdefghijklmnopqrstuvwxyz{|}~";
+static char ascii_printable[] = " ";
