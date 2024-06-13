@@ -40,14 +40,6 @@ if [ ! "$(fc-list "Inconsolata:style=Bold")" ]; then
 fi
 
 # for st
-if [ ! "$(fc-list "NasuM:style=Bold")" ]; then
-  wget -O NasuFont.zip https://osdn.net/downloads/users/25/25473/NasuFont-20200227.zip/
-  unzip NasuFont.zip
-  cp -r NasuFont20200227 ~/.fonts
-  isFontUpdated="true"
-fi
-
-# for st
 if [ ! "$(fc-list "Symbols Nerd Font Mono:style=ForConsolas")" ]; then
   cp $SCRIPT_DIR/st/SymbolsNerdFontMono-ForConsolas.ttf ~/.fonts
   isFontUpdated="true"
