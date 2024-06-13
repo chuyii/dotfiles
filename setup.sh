@@ -9,7 +9,7 @@ sh $HOME/dotfiles/link.sh
 cd $HOME/dotfiles
 
 if [ ! -d $HOME/.cache/dein ]; then
-  wget -q https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+  wget -q https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh
   sh ./installer.sh $HOME/.cache/dein
   rm installer.sh
   REPLACE_HOME=`echo $HOME | sed -e 's:/:\\/:g'`
