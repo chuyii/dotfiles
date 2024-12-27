@@ -10,21 +10,8 @@ compinit
 zstyle ':completion:*:default' menu select=2
 
 # プロンプト
-function powerline_precmd() {
-  PS1="
-$(powerline-c $?)"
-}
-function install_powerline_precmd() {
-  for s in "${precmd_functions[@]}"; do
-    if [ "$s" = "powerline_precmd" ]; then
-      return
-    fi
-  done
-  precmd_functions+=(powerline_precmd)
-}
-if [ "$TERM" != "linux" ]; then
-    install_powerline_precmd
-fi
+PROMPT="%(?.%F{39}.%F{161})[%n %~]
+%(!.#.$) %f"
 
 # 環境変数の設定
 export TERM='xterm-256color'
